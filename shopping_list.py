@@ -20,9 +20,8 @@ def add_new_shopping_list(shopping_dict, store_name):
     Returns:
       None
     """
-
+    shopping_dict[store_name] = []
     # your code here!
-    pass
 
 
 def remove_shopping_list(shopping_dict, store_to_remove):
@@ -37,11 +36,12 @@ def remove_shopping_list(shopping_dict, store_to_remove):
     Returns:
       None
     """
-
+    del shopping_dict[store_to_remove]
     # your code here!
-    pass
+ 
 
 
+# add_to_shopping_list(shopping_dict, "target", ["milk", "soap"])
 def add_to_shopping_list(shopping_dict, list_name, items):
     """Add given items to shopping list.
 
@@ -52,9 +52,9 @@ def add_to_shopping_list(shopping_dict, list_name, items):
     Returns:
       None
     """
-
+    shopping_dict[list_name].extend(items)
     # your code here!
-    pass
+    
 
 
 def remove_from_shopping_list(shopping_dict, list_name, items):
@@ -87,9 +87,9 @@ def display_shopping_list(shopping_dict, list_name):
     Returns:
       None
     """
-
+    item_list = shopping_dict[list_name]
+    print item_list
     # your code here!
-    pass
 
 
 def show_all_lists(shopping_dict):
@@ -130,7 +130,7 @@ def parse_string_of_items(items_string):
     return items
 
 
-def edit_shopping_list(shopping_dict, list_name, add_or_remove):
+def edit_shopping_list(shopping_lists_by_name, list_name, add_or_remove):
     """Get items from user and add / remove them from the shopping list
 
     Arguments:
